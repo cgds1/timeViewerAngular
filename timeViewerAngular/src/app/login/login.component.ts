@@ -21,7 +21,7 @@ export class LoginComponent {
   onLogin() {
     if (this.authService.login(this.username, this.password)) {
       alert('Login successful!');
-      // Redirigir a otra página si se desea
+      this.router.navigate(['/main']);
     } else {
       this.errorMessage = 'Incorrect username or password.';
     }

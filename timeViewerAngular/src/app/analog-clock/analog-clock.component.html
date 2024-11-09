@@ -1,0 +1,22 @@
+<!-- src/app/analog-clock/analog-clock.component.html -->
+<div class="analog-clock">
+  <div class="clock-face">
+    <!-- Agujas del reloj -->
+    <div class="hand hour" [style.transform]="'rotate(' + hourDeg + 'deg)'"></div>
+    <div class="hand minute" [style.transform]="'rotate(' + minuteDeg + 'deg)'"></div>
+    <div class="hand second" [style.transform]="'rotate(' + secondDeg + 'deg)'"></div>
+  </div>
+</div>
+
+<!-- Sliders para ajustar la hora manualmente -->
+<div class="time-adjustment">
+  <label>Hour:
+    <input type="range" min="0" max="23" [(ngModel)]="userHour" (input)="onTimeChange()" />
+  </label>
+  <label>Minute:
+    <input type="range" min="0" max="59" [(ngModel)]="userMinute" (input)="onTimeChange()" />
+  </label>
+  <label>Second:
+    <input type="range" min="0" max="59" [(ngModel)]="userSecond" (input)="onTimeChange()" />
+  </label>
+</div>

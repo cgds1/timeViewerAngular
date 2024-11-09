@@ -1,0 +1,27 @@
+<!-- src/app/main/main.component.html -->
+<div class="main-container">
+    <h1>Time Viewer Project</h1>
+    <p>Select a time visualization:</p>
+  
+    <!-- Menú de selección de visualización -->
+    <div class="view-selector-container">
+      <select [(ngModel)]="selectedView" (change)="onSelectView()" class="view-selector">
+        <option value="" disabled selected>Select View</option>
+        <option value="analog">Analog Clock</option>
+        <!-- Aquí se agregarán las opciones adicionales -->
+        <!-- Ejemplo: <option value="digital">Digital Clock</option> -->
+      </select>
+    </div>
+  
+    <!-- Contenedor de la visualización seleccionada, solo visible cuando hay una selección -->
+    <div *ngIf="selectedView" class="clock-display-container">
+      <h2>{{ getClockTitle() }}</h2>
+      <div class="clock-display">
+        <ng-container *ngIf="selectedView === 'analog'">
+          <app-analog-clock></app-analog-clock> <!-- Visualización: Reloj analógico -->
+        </ng-container>
+        <!-- Otras visualizaciones pueden agregarse aquí -->
+      </div>
+    </div>
+  </div>
+  
