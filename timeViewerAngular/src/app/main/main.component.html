@@ -8,19 +8,23 @@
     <select [(ngModel)]="selectedView" (change)="onSelectView()" class="view-selector">
       <option value="" disabled selected>Select View</option>
       <option value="analog">Analog Clock</option>
-      <option value="digital">Digital Clock</option> <!-- Nueva opción para reloj digital -->
+      <option value="digital">Digital Clock</option>
+      <option value="military">Military Clock</option> <!-- Nueva opción para reloj militar -->
     </select>
   </div>
 
-  <!-- Contenedor de la visualización seleccionada, solo visible cuando hay una selección -->
+  <!-- Contenedor de la visualización seleccionada -->
   <div *ngIf="selectedView" class="clock-display-container">
     <h2>{{ getClockTitle() }}</h2>
     <div class="clock-display">
       <ng-container *ngIf="selectedView === 'analog'">
-        <app-analog-clock></app-analog-clock> <!-- Visualización: Reloj analógico -->
+        <app-analog-clock></app-analog-clock>
       </ng-container>
       <ng-container *ngIf="selectedView === 'digital'">
-        <app-digital-clock></app-digital-clock> <!-- Visualización: Reloj digital -->
+        <app-digital-clock></app-digital-clock>
+      </ng-container>
+      <ng-container *ngIf="selectedView === 'military'">
+        <app-military-clock></app-military-clock> <!-- Reloj militar -->
       </ng-container>
     </div>
   </div>
