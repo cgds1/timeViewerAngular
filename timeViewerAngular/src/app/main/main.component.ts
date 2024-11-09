@@ -7,6 +7,7 @@ import { DigitalClockComponent } from '../digital-clock/digital-clock.component'
 import { MilitaryClockComponent } from '../military-clock/military-clock.component';
 import { HourglassClockComponent } from '../hourglass-clock/hourglass-clock.component';
 import { SundialClockComponent } from '../sundial-clock/sundial-clock.component';
+import { MeterClockComponent } from '../meter-clock/meter-clock.component';
 
 @Component({
   selector: 'app-main',
@@ -20,7 +21,8 @@ import { SundialClockComponent } from '../sundial-clock/sundial-clock.component'
     DigitalClockComponent,
     MilitaryClockComponent,
     HourglassClockComponent,
-    SundialClockComponent
+    SundialClockComponent,
+    MeterClockComponent
   ]
 })
 export class MainComponent {
@@ -42,6 +44,8 @@ export class MainComponent {
         return 'Hourglass Clock';
       case 'sundial':
         return 'Sundial Clock';
+      case 'meter':
+        return 'Meter Clock';
       default:
         return '';
     }

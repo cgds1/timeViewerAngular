@@ -1,0 +1,137 @@
+<style>
+/* src/app/meter-clock/meter-clock.component.css */
+.meter-clock-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+.time-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.time-bar label {
+  width: 60px;
+  font-weight: bold;
+  margin-right: 10px;
+  text-align: right;
+}
+
+.meter {
+  display: flex;
+  flex-grow: 1;
+  gap: 2px;
+}
+
+.meter-block {
+  flex: 1;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.meter-block.filled {
+  background-color: #007bff;
+}
+
+.am-pm {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.time-adjustment {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.time-adjustment label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  align-items: center;
+}
+
+.time-adjustment input[type="number"] {
+  width: 60px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+
+.time-adjustment select {
+  width: 70px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+
+</style>
+
+<div class="meter-clock-container">
+    <h2>Meter Clock</h2>
+  
+    <!-- Barra de horas -->
+    <div class="time-bar">
+      <label>Hours</label>
+      <div class="meter">
+        <div *ngFor="let h of [].constructor(12); let i = index"
+             class="meter-block"
+             [class.filled]="i < (userHour % 12)"></div>
+      </div>
+      <span class="am-pm">{{ isPM ? 'PM' : 'AM' }}</span>
+    </div>
+  
+    <!-- Barra de minutos -->
+    <div class="time-bar">
+      <label>Minutes</label>
+      <div class="meter">
+        <div *ngFor="let m of [].constructor(60); let i = index"
+             class="meter-block"
+             [class.filled]="i < userMinute"></div>
+      </div>
+    </div>
+  
+    <!-- Barra de segundos -->
+    <div class="time-bar">
+      <label>Seconds</label>
+      <div class="meter">
+        <div *ngFor="let s of [].constructor(60); let i = index"
+             class="meter-block"
+             [class.filled]="i < userSecond"></div>
+      </div>
+    </div>
+  
+    <!-- Controles de ajuste manual -->
+    <div class="time-adjustment">
+      <label>Hour:
+        <input type="number" min="1" max="12" [(ngModel)]="userHour" (input)="onTimeChange()" />
+      </label>
+      <label>Minute:
+        <input type="number" min="0" max="59" [(ngModel)]="userMinute" (input)="onTimeChange()" />
+      </label>
+      <label>Second:
+        <input type="number" min="0" max="59" [(ngModel)]="userSecond" (input)="onTimeChange()" />
+      </label>
+      <label>AM/PM:
+        <select [(ngModel)]="isPM" (change)="onTimeChange()">
+          <option [ngValue]="false">AM</option>
+          <option [ngValue]="true">PM</option>
+        </select>
+      </label>
+    </div>
+  </div>
+  
