@@ -31,7 +31,7 @@ export class SteamClockComponent implements OnInit {
       this.userMinute++;
       if (this.userMinute >= 60) {
         this.userMinute = 0;
-        this.userHour = (this.userHour + 1) % 24; // Mantiene la hora en un formato de 24 horas
+        this.userHour = (this.userHour + 1) % 24; 
       }
     }
   }
