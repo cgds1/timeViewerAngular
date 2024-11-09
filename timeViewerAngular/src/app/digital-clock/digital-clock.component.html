@@ -1,0 +1,63 @@
+<style>
+.digital-clock {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.time-adjustment {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.time-adjustment label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  align-items: center;
+}
+
+.time-adjustment input[type="number"],
+.time-adjustment select {
+  width: 60px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+}
+
+.time-adjustment input[type="number"]:focus,
+.time-adjustment select:focus {
+  outline: none;
+  border-color: #0056b3;
+}
+
+</style>
+
+<!-- src/app/digital-clock/digital-clock.component.html -->
+<div class="digital-clock">
+  <h2>{{ userHour | number:'2.0' }} : {{ userMinute | number:'2.0' }} : {{ userSecond | number:'2.0' }} {{ isPM ? 'PM' : 'AM' }}</h2>
+</div>
+
+<div class="time-adjustment">
+  <label>Hour:
+    <input type="number" min="1" max="12" [(ngModel)]="userHour" (input)="onTimeChange()" />
+  </label>
+  <label>Minute:
+    <input type="number" min="0" max="59" [(ngModel)]="userMinute" (input)="onTimeChange()" />
+  </label>
+  <label>Second:
+    <input type="number" min="0" max="59" [(ngModel)]="userSecond" (input)="onTimeChange()" />
+  </label>
+  <label>AM/PM:
+    <select [(ngModel)]="isPM" (change)="onTimeChange()">
+      <option [ngValue]="false">AM</option>
+      <option [ngValue]="true">PM</option>
+    </select>
+  </label>
+</div>

@@ -3,13 +3,14 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AnalogClockComponent } from '../analog-clock/analog-clock.component';
+import { DigitalClockComponent } from '../digital-clock/digital-clock.component';  // Importa el DigitalClockComponent
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
   standalone: true,
-  imports: [FormsModule, CommonModule, AnalogClockComponent]
+  imports: [FormsModule, CommonModule, AnalogClockComponent, DigitalClockComponent]  // Añade DigitalClockComponent aquí
 })
 export class MainComponent {
   selectedView = ''; // Inicialmente vacío para que el reloj no se muestre
@@ -22,7 +23,8 @@ export class MainComponent {
     switch (this.selectedView) {
       case 'analog':
         return 'Analog Clock';
-      // Agregar más casos para otros tipos de relojes
+      case 'digital':
+        return 'Digital Clock';
       default:
         return '';
     }
