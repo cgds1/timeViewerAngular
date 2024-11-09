@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   imports: [FormsModule, CommonModule]
 })
 export class SteamClockComponent implements OnInit {
-  userHour: number = new Date().getHours(); // Ahora en formato de 24 horas
+  userHour: number = new Date().getHours();
   userMinute: number = new Date().getMinutes();
   userSecond: number = new Date().getSeconds();
   isManual: boolean = false;
