@@ -3,7 +3,6 @@
   <h1>Time Viewer Project</h1>
   <p>Select a time visualization:</p>
 
-  <!-- Menú de selección de visualización -->
   <div class="view-selector-container">
     <select [(ngModel)]="selectedView" (change)="onSelectView()" class="view-selector">
       <option value="" disabled selected>Select View</option>
@@ -12,11 +11,11 @@
       <option value="military">Military Clock</option>
       <option value="hourglass">Hourglass Clock</option>
       <option value="sundial">Sundial Clock</option>
-      <option value="meter">Meter Clock</option> <!-- Nueva opción para el reloj de medidor -->
+      <option value="meter">Meter Clock</option>
+      <option value="steam">Steam Clock</option> <!-- Nueva opción para el reloj de vapor -->
     </select>
   </div>
 
-  <!-- Contenedor de la visualización seleccionada -->
   <div *ngIf="selectedView" class="clock-display-container">
     <h2>{{ getClockTitle() }}</h2>
     <div class="clock-display">
@@ -36,7 +35,10 @@
         <app-sundial-clock></app-sundial-clock>
       </ng-container>
       <ng-container *ngIf="selectedView === 'meter'">
-        <app-meter-clock></app-meter-clock> <!-- Reloj de medidor -->
+        <app-meter-clock></app-meter-clock>
+      </ng-container>
+      <ng-container *ngIf="selectedView === 'steam'">
+        <app-steam-clock></app-steam-clock> <!-- Reloj de vapor -->
       </ng-container>
     </div>
   </div>

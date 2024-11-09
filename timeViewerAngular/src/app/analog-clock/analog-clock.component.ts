@@ -1,14 +1,14 @@
 // src/app/analog-clock/analog-clock.component.ts
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';  // Importa CommonModule
+import { CommonModule } from '@angular/common'; 
 
 @Component({
   selector: 'app-analog-clock',
   templateUrl: './analog-clock.component.html',
   styleUrls: ['./analog-clock.component.css'],
   standalone: true,
-  imports: [FormsModule, CommonModule]  // Añade CommonModule aquí
+  imports: [FormsModule, CommonModule]  
 })
 export class AnalogClockComponent implements OnInit {
   hourDeg = 0;
