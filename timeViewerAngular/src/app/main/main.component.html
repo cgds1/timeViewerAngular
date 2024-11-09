@@ -9,7 +9,8 @@
       <option value="" disabled selected>Select View</option>
       <option value="analog">Analog Clock</option>
       <option value="digital">Digital Clock</option>
-      <option value="military">Military Clock</option> <!-- Nueva opción para reloj militar -->
+      <option value="military">Military Clock</option>
+      <option value="hourglass">Hourglass Clock</option> <!-- Nueva opción para el reloj de arena -->
     </select>
   </div>
 
@@ -24,7 +25,10 @@
         <app-digital-clock></app-digital-clock>
       </ng-container>
       <ng-container *ngIf="selectedView === 'military'">
-        <app-military-clock></app-military-clock> <!-- Reloj militar -->
+        <app-military-clock></app-military-clock>
+      </ng-container>
+      <ng-container *ngIf="selectedView === 'hourglass'">
+        <app-hourglass-clock></app-hourglass-clock> <!-- Reloj de arena -->
       </ng-container>
     </div>
   </div>

@@ -1,0 +1,81 @@
+<style>
+
+.hourglass-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.hourglass {
+  position: relative;
+  width: 80px;
+  height: 160px;
+  background: #e0e0e0;
+  border-radius: 40px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: ns-resize;
+}
+
+.hourglass .top, .hourglass .bottom {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  background: #007bff;
+  transition: height 0.1s ease;
+}
+
+.hourglass .top {
+  top: 0;
+  height: 50%;
+  border-radius: 40px 40px 0 0;
+}
+
+.hourglass .bottom {
+  bottom: 0;
+  height: var(--fill-level, 0%);
+  border-radius: 0 0 40px 40px;
+  background-color: #ffdd57;
+}
+
+.hourglass p {
+  position: absolute;
+  bottom: -2rem;
+  width: 100%;
+  font-weight: bold;
+  color: #333;
+  font-size: 1rem;
+}
+
+
+</style>
+
+<!-- src/app/hourglass-clock/hourglass-clock.component.html -->
+<div class="hourglass-container">
+  <div class="hourglass" 
+       (mousedown)="startDragging($event, 'hour')" 
+       (mouseup)="stopDragging()">
+    <div class="top"></div>
+    <div class="bottom" [style.height]="(userHour % 12) / 12 * 100 + '%'"></div>
+    <p>Hours</p>
+  </div>
+
+  <div class="hourglass" 
+       (mousedown)="startDragging($event, 'minute')" 
+       (mouseup)="stopDragging()">
+    <div class="top"></div>
+    <div class="bottom" [style.height]="userMinute / 60 * 100 + '%'"></div>
+    <p>Minutes</p>
+  </div>
+
+  <div class="hourglass" 
+       (mousedown)="startDragging($event, 'second')" 
+       (mouseup)="stopDragging()">
+    <div class="top"></div>
+    <div class="bottom" [style.height]="userSecond / 60 * 100 + '%'"></div>
+    <p>Seconds</p>
+  </div>
+</div>
