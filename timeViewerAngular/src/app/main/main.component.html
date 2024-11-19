@@ -8,11 +8,7 @@
       <option value="" disabled selected>Select View</option>
       <option value="analog">Analog Clock</option>
       <option value="digital">Digital Clock</option>
-      <option value="military">Military Clock</option>
-      <option value="hourglass">Hourglass Clock</option>
-      <option value="sundial">Sundial Clock</option>
       <option value="meter">Meter Clock</option>
-      <option value="steam">Steam Clock</option> <!-- Nueva opción para el reloj de vapor -->
     </select>
   </div>
 
@@ -25,20 +21,8 @@
       <ng-container *ngIf="selectedView === 'digital'">
         <app-digital-clock></app-digital-clock>
       </ng-container>
-      <ng-container *ngIf="selectedView === 'military'">
-        <app-military-clock></app-military-clock>
-      </ng-container>
-      <ng-container *ngIf="selectedView === 'hourglass'">
-        <app-hourglass-clock></app-hourglass-clock>
-      </ng-container>
-      <ng-container *ngIf="selectedView === 'sundial'">
-        <app-sundial-clock></app-sundial-clock>
-      </ng-container>
       <ng-container *ngIf="selectedView === 'meter'">
         <app-meter-clock></app-meter-clock>
-      </ng-container>
-      <ng-container *ngIf="selectedView === 'steam'">
-        <app-steam-clock></app-steam-clock> <!-- Reloj de vapor -->
       </ng-container>
     </div>
   </div>

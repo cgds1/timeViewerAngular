@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [FormsModule, CommonModule]  
 })
+
 export class AnalogClockComponent implements OnInit {
   hourDeg = 0;
   minuteDeg = 0;
@@ -22,13 +23,16 @@ export class AnalogClockComponent implements OnInit {
 
   isManual = false;  // Indica si el usuario ha modificado el tiempo manualmente
 
+  // Números del reloj
+  hours = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
   ngOnInit(): void {
     this.updateClock();
     setInterval(() => {
       if (!this.isManual) {
-        this.setSystemTime(); // Actualizar con la hora del sistema solo si no es manual
+        this.setSystemTime();
       } else {
-        this.incrementTime(); // Incrementa el tiempo manualmente
+        this.incrementTime();
       }
       this.updateClock();
     }, 1000);  // Actualizar cada segundo

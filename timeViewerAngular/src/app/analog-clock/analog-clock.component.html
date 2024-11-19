@@ -1,87 +1,37 @@
-<style>
-  .analog-clock {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  width: 200px;
-  background-color: #fff;
-  border-radius: 50%;
-  position: relative;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+<div class="analog-clock-container">
+  <div class="analog-clock">
+    <div class="clock-face">
+      <!-- Agujas del reloj -->
+      <div class="hand hour" [style.transform]="'rotate(' + hourDeg + 'deg)'"></div>
+      <div class="hand minute" [style.transform]="'rotate(' + minuteDeg + 'deg)'"></div>
+      <div class="hand second" [style.transform]="'rotate(' + secondDeg + 'deg)'"></div>
 
-.clock-face {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.hand {
-  position: absolute;
-  bottom: 50%;
-  left: 50%;
-  transform-origin: bottom;
-  transform: translateX(-50%);
-}
-
-.hour {
-  width: 6px;
-  height: 50px;
-  background-color: #333;
-}
-
-.minute {
-  width: 4px;
-  height: 70px;
-  background-color: #666;
-}
-
-.second {
-  width: 2px;
-  height: 90px;
-  background-color: #ff0000;
-}
-
-/* Estilos para los sliders */
-.time-adjustment {
-  margin-top: 1.5rem;
-  text-align: center;
-}
-
-.time-adjustment label {
-  display: block;
-  font-weight: bold;
-  margin: 0.5rem 0;
-}
-
-.time-adjustment input[type="range"] {
-  width: 100%;
-  max-width: 200px;
-  margin-top: 0.5rem;
-}
-
-</style>
-
-<!-- src/app/analog-clock/analog-clock.component.html -->
-<div class="analog-clock">
-  <div class="clock-face">
-    <!-- Agujas del reloj -->
-    <div class="hand hour" [style.transform]="'rotate(' + hourDeg + 'deg)'"></div>
-    <div class="hand minute" [style.transform]="'rotate(' + minuteDeg + 'deg)'"></div>
-    <div class="hand second" [style.transform]="'rotate(' + secondDeg + 'deg)'"></div>
+      <!-- Números del reloj -->
+      <div class="number" style="top: 2%; left: 50%; transform: translate(-50%, 0);">12</div>
+      <div class="number" style="top: 15%; left: 75%; transform: translate(-50%, -50%);">1</div>
+      <div class="number" style="top: 30%; left: 87%; transform: translate(-50%, -50%);">2</div>
+      <div class="number" style="top: 50%; left: 93%; transform: translate(-50%, -50%);">3</div>
+      <div class="number" style="top: 70%; left: 87%; transform: translate(-50%, -50%);">4</div>
+      <div class="number" style="top: 85%; left: 75%; transform: translate(-50%, -50%);">5</div>
+      <div class="number" style="top: 93%; left: 50%; transform: translate(-50%, -100%);">6</div>
+      <div class="number" style="top: 85%; left: 25%; transform: translate(-50%, -50%);">7</div>
+      <div class="number" style="top: 70%; left: 13%; transform: translate(-50%, -50%);">8</div>
+      <div class="number" style="top: 50%; left: 2%; transform: translate(-50%, -60%);">9</div>
+      <div class="number" style="top: 30%; left: 13%; transform: translate(-50%, -50%);">10</div>
+      <div class="number" style="top: 15%; left: 25%; transform: translate(-50%, -50%);">11</div>
+    </div>
   </div>
-</div>
 
-<!-- Sliders para ajustar la hora manualmente -->
-<div class="time-adjustment">
-  <label>Hour:
-    <input type="range" min="0" max="23" [(ngModel)]="userHour" (input)="onTimeChange()" />
-  </label>
-  <label>Minute:
-    <input type="range" min="0" max="59" [(ngModel)]="userMinute" (input)="onTimeChange()" />
-  </label>
-  <label>Second:
-    <input type="range" min="0" max="59" [(ngModel)]="userSecond" (input)="onTimeChange()" />
-  </label>
+  <!-- Sliders para ajustar la hora manualmente -->
+  <div class="time-adjustment">
+    <label>Hour:
+      <input type="range" min="0" max="23" [(ngModel)]="userHour" (input)="onTimeChange()" />
+    </label>
+    <label>Minute:
+      <input type="range" min="0" max="59" [(ngModel)]="userMinute" (input)="onTimeChange()" />
+    </label>
+    <label>Second:
+      <input type="range" min="0" max="59" [(ngModel)]="userSecond" (input)="onTimeChange()" />
+    </label>
+  </div>
 </div>
