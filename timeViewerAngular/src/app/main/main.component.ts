@@ -1,10 +1,10 @@
-// src/app/main/main.component.ts
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AnalogClockComponent } from '../analog-clock/analog-clock.component';
 import { DigitalClockComponent } from '../digital-clock/digital-clock.component';
 import { MeterClockComponent } from '../meter-clock/meter-clock.component';
+import { WordClockComponent } from '../word-clock/word-clock.component'; // Importar Word Clock
 
 @Component({
   selector: 'app-main',
@@ -16,7 +16,8 @@ import { MeterClockComponent } from '../meter-clock/meter-clock.component';
     CommonModule,
     AnalogClockComponent,
     DigitalClockComponent,
-    MeterClockComponent
+    MeterClockComponent,
+    WordClockComponent // Registrar Word Clock
   ]
 })
 export class MainComponent {
@@ -34,6 +35,8 @@ export class MainComponent {
         return 'Digital Clock';
       case 'meter':
         return 'Meter Clock';
+      case 'word': // Nuevo caso para Word Clock
+        return 'Word Clock';
       default:
         return '';
     }

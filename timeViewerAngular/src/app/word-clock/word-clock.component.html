@@ -1,0 +1,17 @@
+<div class="word-clock-container">
+
+    <p class="time-text">{{ timeText }}</p>
+  
+    <div class="time-adjustment">
+      <label>Hour:
+        <input type="range" min="0" max="23" [(ngModel)]="userHour" (input)="updateTime()" />
+      </label>
+      <label>Minute:
+        <input type="range" min="0" max="59" [(ngModel)]="userMinute" (input)="updateTime()" />
+      </label>
+      <label>Second:
+        <input type="range" min="0" max="59" [(ngModel)]="userSecond" (input)="updateTime()" />
+      </label>
+    </div>
+  </div>
+  
