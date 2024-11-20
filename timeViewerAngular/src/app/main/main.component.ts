@@ -6,6 +6,7 @@ import { DigitalClockComponent } from '../digital-clock/digital-clock.component'
 import { MeterClockComponent } from '../meter-clock/meter-clock.component';
 import { WordClockComponent } from '../word-clock/word-clock.component'; 
 import { ProgressClockComponent } from '../progress-clock/progress-clock.component';
+import { BinaryClockComponent } from '../binary-clock/binary-clock.component';
 
 @Component({
   selector: 'app-main',
@@ -19,7 +20,8 @@ import { ProgressClockComponent } from '../progress-clock/progress-clock.compone
     DigitalClockComponent,
     MeterClockComponent,
     WordClockComponent,
-    ProgressClockComponent 
+    ProgressClockComponent,
+    BinaryClockComponent
   ]
 })
 export class MainComponent {

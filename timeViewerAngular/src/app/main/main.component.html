@@ -9,7 +9,8 @@
       <option value="digital">Digital Clock</option>
       <option value="meter">Meter Clock</option>
       <option value="word">Word Clock</option>
-      <option value="progress">Progress Clock</option> <!-- Nueva opción -->
+      <option value="progress">Progress Clock</option>
+      <option value="binary">Binary Clock</option>
     </select>
   </div>
 
@@ -29,7 +30,10 @@
         <app-word-clock></app-word-clock>
       </ng-container>
       <ng-container *ngIf="selectedView === 'progress'">
-        <app-progress-clock></app-progress-clock> <!-- Integración del nuevo componente -->
+        <app-progress-clock></app-progress-clock> 
+      </ng-container>
+      <ng-container *ngIf="selectedView === 'binary'">
+        <app-binary-clock></app-binary-clock>
       </ng-container>
     </div>
   </div>
