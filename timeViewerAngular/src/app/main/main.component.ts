@@ -7,6 +7,7 @@ import { MeterClockComponent } from '../meter-clock/meter-clock.component';
 import { WordClockComponent } from '../word-clock/word-clock.component'; 
 import { ProgressClockComponent } from '../progress-clock/progress-clock.component';
 import { BinaryClockComponent } from '../binary-clock/binary-clock.component';
+import { ColorCircleClockComponent } from '../color-circle-clock/color-circle-clock.component';
 
 @Component({
   selector: 'app-main',
@@ -21,7 +22,8 @@ import { BinaryClockComponent } from '../binary-clock/binary-clock.component';
     MeterClockComponent,
     WordClockComponent,
     ProgressClockComponent,
-    BinaryClockComponent
+    BinaryClockComponent,
+    ColorCircleClockComponent
   ]
 })
 export class MainComponent {

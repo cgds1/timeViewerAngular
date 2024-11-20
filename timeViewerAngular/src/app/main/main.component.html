@@ -11,6 +11,7 @@
       <option value="word">Word Clock</option>
       <option value="progress">Progress Clock</option>
       <option value="binary">Binary Clock</option>
+      <option value="color-circle">Color Circle Clock</option>
     </select>
   </div>
 
@@ -34,6 +35,9 @@
       </ng-container>
       <ng-container *ngIf="selectedView === 'binary'">
         <app-binary-clock></app-binary-clock>
+      </ng-container>
+      <ng-container *ngIf="selectedView === 'color-circle'">
+        <app-color-circle-clock></app-color-circle-clock>
       </ng-container>
     </div>
   </div>

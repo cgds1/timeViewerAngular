@@ -1,0 +1,51 @@
+.color-circle-clock-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .circle-display {
+    position: relative;
+    width: 200px;
+    height: 200px;
+  }
+  
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+  }
+  
+  .hours-circle {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  .minutes-circle {
+    width: 75%;
+    height: 75%;
+    top: 12.5%;
+    left: 12.5%;
+    z-index: 2;
+  }
+  
+  .seconds-circle {
+    width: 50%;
+    height: 50%;
+    top: 25%;
+    left: 25%;
+    z-index: 3;
+  }
+  
+  .time-adjustment label {
+    display: block;
+    margin: 10px 0;
+    font-size: 1rem;
+  }
+  
+  input[type="range"] {
+    width: 100%;
+    margin: 5px 0;
+  }
+  

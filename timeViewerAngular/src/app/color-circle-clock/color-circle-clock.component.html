@@ -1,0 +1,25 @@
+<div class="color-circle-clock-container">
+    <div class="circle-display">
+      <div class="circle hours-circle" [style.backgroundColor]="getColor(userHour, 24)"></div>
+      <div class="circle minutes-circle" [style.backgroundColor]="getColor(userMinute, 60)"></div>
+      <div class="circle seconds-circle" [style.backgroundColor]="getColor(userSecond, 60)"></div>
+    </div>
+  
+    <!-- Reloj en formato texto -->
+    <div class="time-display">
+      <p>Hora actual: {{ formatTime(userHour) }}:{{ formatTime(userMinute) }}:{{ formatTime(userSecond) }}</p>
+    </div>
+  
+    <div class="time-adjustment">
+      <label>Hour:
+        <input type="range" min="0" max="23" [(ngModel)]="userHour" (input)="updateTime()" />
+      </label>
+      <label>Minute:
+        <input type="range" min="0" max="59" [(ngModel)]="userMinute" (input)="updateTime()" />
+      </label>
+      <label>Second:
+        <input type="range" min="0" max="59" [(ngModel)]="userSecond" (input)="updateTime()" />
+      </label>
+    </div>
+  </div>
+  
