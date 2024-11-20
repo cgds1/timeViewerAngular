@@ -1,0 +1,24 @@
+<div class="spiral-container">
+    <!-- Círculo grande (Horas) -->
+    <div class="spiral" [ngStyle]="getSpiralStyle(userHour, 24)"></div>
+  
+    <!-- Círculo mediano (Minutos) -->
+    <div class="spiral" [ngStyle]="getSpiralStyle(userMinute, 60)"></div>
+  
+    <!-- Círculo pequeño (Segundos) -->
+    <div class="spiral" [ngStyle]="getSpiralStyle(userSecond, 60)"></div>
+  
+    <!-- Hora actual -->
+    <div class="current-time">Hora actual: {{ userHour | number: '2.0' }}:{{ userMinute | number: '2.0' }}:{{ userSecond | number: '2.0' }}</div>
+  
+    <!-- Ajuste de tiempo -->
+    <div class="time-adjustment">
+      <label for="hour">Hora:</label>
+      <input id="hour" type="range" min="0" max="23" [(ngModel)]="userHour" (input)="updateManualTime()" />
+      <label for="minute">Minuto:</label>
+      <input id="minute" type="range" min="0" max="59" [(ngModel)]="userMinute" (input)="updateManualTime()" />
+      <label for="second">Segundo:</label>
+      <input id="second" type="range" min="0" max="59" [(ngModel)]="userSecond" (input)="updateManualTime()" />
+    </div>
+  </div>
+  

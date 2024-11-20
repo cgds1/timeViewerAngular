@@ -8,6 +8,7 @@ import { WordClockComponent } from '../word-clock/word-clock.component';
 import { ProgressClockComponent } from '../progress-clock/progress-clock.component';
 import { BinaryClockComponent } from '../binary-clock/binary-clock.component';
 import { ColorCircleClockComponent } from '../color-circle-clock/color-circle-clock.component';
+import { SpiralClockComponent } from '../spiral-clock/spiral-clock.component';
 
 @Component({
   selector: 'app-main',
@@ -23,7 +24,8 @@ import { ColorCircleClockComponent } from '../color-circle-clock/color-circle-cl
     WordClockComponent,
     ProgressClockComponent,
     BinaryClockComponent,
-    ColorCircleClockComponent
+    ColorCircleClockComponent,
+    SpiralClockComponent 
   ]
 })
 export class MainComponent {
@@ -41,10 +43,14 @@ export class MainComponent {
         return 'Digital Clock';
       case 'meter':
         return 'Meter Clock';
-      case 'word': 
-        return 'Word Clock';
-      case 'progress':
-        return 'Progress Clock';
+        case 'word':
+          return 'Word Clock';
+        case 'progress':
+          return 'Progress Clock';
+        case 'binary':
+          return 'Binary Clock';
+        case 'spiral':
+          return 'Spiral Clock';
       default:
         return '';
     }

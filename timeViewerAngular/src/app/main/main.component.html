@@ -12,6 +12,7 @@
       <option value="progress">Progress Clock</option>
       <option value="binary">Binary Clock</option>
       <option value="color-circle">Color Circle Clock</option>
+      <option value="spiral">Spiral Clock</option>
     </select>
   </div>
 
@@ -39,6 +40,9 @@
       <ng-container *ngIf="selectedView === 'color-circle'">
         <app-color-circle-clock></app-color-circle-clock>
       </ng-container>
+      <ng-container *ngIf="selectedView === 'spiral'">
+        <app-spiral-clock></app-spiral-clock>
+      </ng-container>      
     </div>
   </div>
 </div>

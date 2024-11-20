@@ -1,0 +1,33 @@
+.spiral-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .spiral {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 200px; /* Tamaño máximo del círculo */
+    max-height: 200px;
+    margin: 10px;
+  }
+  
+  .current-time {
+    margin: 15px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .time-adjustment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .time-adjustment label {
+    margin-top: 10px;
+  }
+  
