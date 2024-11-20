@@ -8,7 +8,8 @@
       <option value="analog">Analog Clock</option>
       <option value="digital">Digital Clock</option>
       <option value="meter">Meter Clock</option>
-      <option value="word">Word Clock</option> <!-- Nueva opción para el Word Clock -->
+      <option value="word">Word Clock</option>
+      <option value="progress">Progress Clock</option> <!-- Nueva opción -->
     </select>
   </div>
 
@@ -25,7 +26,10 @@
         <app-meter-clock></app-meter-clock>
       </ng-container>
       <ng-container *ngIf="selectedView === 'word'">
-        <app-word-clock></app-word-clock> <!-- Nuevo componente Word Clock -->
+        <app-word-clock></app-word-clock>
+      </ng-container>
+      <ng-container *ngIf="selectedView === 'progress'">
+        <app-progress-clock></app-progress-clock> <!-- Integración del nuevo componente -->
       </ng-container>
     </div>
   </div>

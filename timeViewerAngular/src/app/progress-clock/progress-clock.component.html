@@ -1,0 +1,19 @@
+<div class="progress-clock-container">
+    <div class="progress-display">
+      <p>{{ progressPercentage }}% del día transcurrido</p>
+      <p>Hora actual: {{ timeText }}</p>
+    </div>
+  
+    <div class="time-adjustment">
+      <label>Hour:
+        <input type="range" min="0" max="23" [(ngModel)]="userHour" (input)="updateTime()" />
+      </label>
+      <label>Minute:
+        <input type="range" min="0" max="59" [(ngModel)]="userMinute" (input)="updateTime()" />
+      </label>
+      <label>Second:
+        <input type="range" min="0" max="59" [(ngModel)]="userSecond" (input)="updateTime()" />
+      </label>
+    </div>
+  </div>
+  
