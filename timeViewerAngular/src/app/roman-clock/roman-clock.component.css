@@ -1,0 +1,25 @@
+.roman-clock-container {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .time-display {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .sliders {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  label {
+    margin: 5px 0;
+  }
+  
+  input[type='range'] {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+  
