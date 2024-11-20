@@ -9,6 +9,7 @@ import { ProgressClockComponent } from '../progress-clock/progress-clock.compone
 import { BinaryClockComponent } from '../binary-clock/binary-clock.component';
 import { ColorCircleClockComponent } from '../color-circle-clock/color-circle-clock.component';
 import { SpiralClockComponent } from '../spiral-clock/spiral-clock.component';
+import { SpiralLoadClockComponent } from "../spiral-load-clock/spiral-load-clock.component";
 
 @Component({
   selector: 'app-main',
@@ -25,7 +26,8 @@ import { SpiralClockComponent } from '../spiral-clock/spiral-clock.component';
     ProgressClockComponent,
     BinaryClockComponent,
     ColorCircleClockComponent,
-    SpiralClockComponent 
+    SpiralClockComponent,
+    SpiralLoadClockComponent 
   ]
 })
 export class MainComponent {
@@ -51,6 +53,8 @@ export class MainComponent {
           return 'Binary Clock';
         case 'spiral':
           return 'Spiral Clock';
+        case 'spiral load':
+          return 'Spiral Load Clock';
       default:
         return '';
     }

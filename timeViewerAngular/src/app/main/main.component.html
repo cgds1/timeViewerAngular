@@ -13,6 +13,7 @@
       <option value="binary">Binary Clock</option>
       <option value="color-circle">Color Circle Clock</option>
       <option value="spiral">Spiral Clock</option>
+      <option value="spiral-load">Spiral Load</option>
     </select>
   </div>
 
@@ -42,7 +43,10 @@
       </ng-container>
       <ng-container *ngIf="selectedView === 'spiral'">
         <app-spiral-clock></app-spiral-clock>
-      </ng-container>      
+      </ng-container>
+      <ng-container *ngIf="selectedView === 'spiral-load'">
+        <app-spiral-load-clock></app-spiral-load-clock>
+      </ng-container>            
     </div>
   </div>
 </div>

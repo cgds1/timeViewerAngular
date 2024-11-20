@@ -1,0 +1,40 @@
+<div class="spiral-clock-container">
+    <!-- Círculo de Horas -->
+    <div class="circle hours">
+      <div class="fill" [ngStyle]="getFillStyle(userHour, 24, 'red')"></div>
+    </div>
+  
+    <!-- Círculo de Minutos -->
+    <div class="circle minutes">
+      <div class="fill" [ngStyle]="getFillStyle(userMinute, 60, 'blue')"></div>
+    </div>
+  
+    <!-- Círculo de Segundos -->
+    <div class="circle seconds">
+      <div class="fill" [ngStyle]="getFillStyle(userSecond, 60, 'green')"></div>
+    </div>
+  </div>
+  
+  <!-- Mostrar la hora actual -->
+  <div class="time-display">
+    Hora actual: {{ userHour | number: '2.0' }}:
+    {{ userMinute | number: '2.0' }}:
+    {{ userSecond | number: '2.0' }}
+  </div>
+  
+  <!-- Sliders para ajustar la hora -->
+  <div class="time-controls">
+    <label>
+      Hora:
+      <input type="range" min="0" max="23" [(ngModel)]="userHour" (input)="onTimeUpdate()" />
+    </label>
+    <label>
+      Minuto:
+      <input type="range" min="0" max="59" [(ngModel)]="userMinute" (input)="onTimeUpdate()" />
+    </label>
+    <label>
+      Segundo:
+      <input type="range" min="0" max="59" [(ngModel)]="userSecond" (input)="onTimeUpdate()" />
+    </label>
+  </div>
+  
