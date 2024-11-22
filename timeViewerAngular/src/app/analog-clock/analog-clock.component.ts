@@ -16,14 +16,12 @@ export class AnalogClockComponent implements OnInit {
   minuteDeg = 0;
   secondDeg = 0;
 
-  // Valores ajustables por el usuario
   userHour = new Date().getHours();
   userMinute = new Date().getMinutes();
   userSecond = new Date().getSeconds();
 
-  isManual = false;  // Indica si el usuario ha modificado el tiempo manualmente
+  isManual = false;
 
-  // Números del reloj
   hours = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   ngOnInit(): void {
@@ -35,10 +33,9 @@ export class AnalogClockComponent implements OnInit {
         this.incrementTime();
       }
       this.updateClock();
-    }, 1000);  // Actualizar cada segundo
+    }, 1000);  
   }
 
-  // Método para configurar la hora desde la computadora
   setSystemTime() {
     const now = new Date();
     this.userHour = now.getHours();
@@ -46,7 +43,6 @@ export class AnalogClockComponent implements OnInit {
     this.userSecond = now.getSeconds();
   }
 
-  // Incrementa el tiempo manualmente
   incrementTime() {
     this.userSecond++;
     if (this.userSecond >= 60) {
@@ -62,16 +58,14 @@ export class AnalogClockComponent implements OnInit {
     }
   }
 
-  // Actualiza las posiciones de las agujas
   updateClock() {
     this.secondDeg = this.userSecond * 6;
     this.minuteDeg = this.userMinute * 6 + this.secondDeg / 60;
     this.hourDeg = (this.userHour % 12) * 30 + this.minuteDeg / 12;
   }
 
-  // Método que se ejecuta cuando el usuario ajusta la hora
   onTimeChange() {
-    this.isManual = true;  // Cambia a manual al hacer un ajuste
+    this.isManual = true; 
     this.updateClock();
   }
 }
