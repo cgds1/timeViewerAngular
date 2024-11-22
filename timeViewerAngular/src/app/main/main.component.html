@@ -1,56 +1,37 @@
-<div class="main-container">
-  <h1>Time Viewer Project</h1>
-  <p>Select a time visualization:</p>
+<div class="main-layout">
+  <aside class="sidebar">
+    <h2>Time Viewer</h2>
+    <ul>
+      <li (click)="selectView('digital')">Digital Clock</li>
+      <li (click)="selectView('analog')">Analog Clock</li>
+      <li (click)="selectView('binary')">Binary Clock</li>
+      <li (click)="selectView('color-circle')">Color Circle Clock</li>
+      <li (click)="selectView('meter')">Meter Clock</li>
+      <li (click)="selectView('progress')">Progress Clock</li>
+      <li (click)="selectView('roman')">Roman Clock</li>
+      <li (click)="selectView('spiral')">Spiral Clock</li>
+      <li (click)="selectView('sprial-load')">Spiral Load Clock</li>
+      <li (click)="selectView('word')">Word Clock</li>
+    </ul>
+  </aside>
 
-  <div class="view-selector-container">
-    <select [(ngModel)]="selectedView" (change)="onSelectView()" class="view-selector">
-      <option value="" disabled selected>Select View</option>
-      <option value="analog">Analog Clock</option>
-      <option value="digital">Digital Clock</option>
-      <option value="meter">Meter Clock</option>
-      <option value="word">Word Clock</option>
-      <option value="progress">Progress Clock</option>
-      <option value="binary">Binary Clock</option>
-      <option value="color-circle">Color Circle Clock</option>
-      <option value="spiral">Spiral Clock</option>
-      <option value="spiral-load">Spiral Load Clock</option>
-      <option value="roman">Roman Clock</option>
-    </select>
-  </div>
+  <main class="content">
+    <button class="logout-btn" (click)="logout()">Logout</button>
 
-  <div *ngIf="selectedView" class="clock-display-container">
-    <h2>{{ getClockTitle() }}</h2>
-    <div class="clock-display">
-      <ng-container *ngIf="selectedView === 'analog'">
-        <app-analog-clock></app-analog-clock>
+    <h1>{{ currentView | titlecase }}</h1>
+    <div class="clock-container">
+      <ng-container [ngSwitch]="currentView">
+        <app-digital-clock *ngSwitchCase="'digital'"></app-digital-clock>
+        <app-analog-clock *ngSwitchCase="'analog'"></app-analog-clock>
+        <app-binary-clock *ngSwitchCase="'binary'"></app-binary-clock>
+        <app-color-circle-clock *ngSwitchCase="'color-circle'"></app-color-circle-clock>
+        <app-meter-clock *ngSwitchCase="'meter'"></app-meter-clock>
+        <app-progress-clock *ngSwitchCase="'progress'"></app-progress-clock>
+        <app-roman-clock *ngSwitchCase="'roman'"></app-roman-clock>
+        <app-spiral-clock *ngSwitchCase="'spiral'"></app-spiral-clock>
+        <app-spiral-load-clock *ngSwitchCase="'sprial-load'"></app-spiral-load-clock>
+        <app-word-clock *ngSwitchCase="'word'"></app-word-clock>
       </ng-container>
-      <ng-container *ngIf="selectedView === 'digital'">
-        <app-digital-clock></app-digital-clock>
-      </ng-container>
-      <ng-container *ngIf="selectedView === 'meter'">
-        <app-meter-clock></app-meter-clock>
-      </ng-container>
-      <ng-container *ngIf="selectedView === 'word'">
-        <app-word-clock></app-word-clock>
-      </ng-container>
-      <ng-container *ngIf="selectedView === 'progress'">
-        <app-progress-clock></app-progress-clock> 
-      </ng-container>
-      <ng-container *ngIf="selectedView === 'binary'">
-        <app-binary-clock></app-binary-clock>
-      </ng-container>
-      <ng-container *ngIf="selectedView === 'color-circle'">
-        <app-color-circle-clock></app-color-circle-clock>
-      </ng-container>
-      <ng-container *ngIf="selectedView === 'spiral'">
-        <app-spiral-clock></app-spiral-clock>
-      </ng-container>
-      <ng-container *ngIf="selectedView === 'spiral-load'">
-        <app-spiral-load-clock></app-spiral-load-clock>
-      </ng-container>
-      <ng-container *ngIf="selectedView === 'roman'">
-        <app-roman-clock></app-roman-clock>
-      </ng-container>                 
     </div>
-  </div>
+  </main>
 </div>

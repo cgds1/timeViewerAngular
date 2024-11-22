@@ -20,7 +20,6 @@ export class RegisterComponent {
 
   onRegister() {
     if (this.authService.register(this.username, this.password)) {
-      alert('User registered successfully!');
       this.router.navigate(['/login']); // Redirige al login después del registro
     } else {
       this.errorMessage = 'Invalid username or password.';

@@ -33,36 +33,13 @@ import { RomanClockComponent } from '../roman-clock/roman-clock.component';
   ]
 })
 export class MainComponent {
-  selectedView = ''; // Inicialmente vacío para que el reloj no se muestre
+  currentView: string = 'digital';
 
-  onSelectView() {
-    // Lógica para manejar cambios en la selección
+  selectView(view: string) {
+    this.currentView = view;
   }
 
-  getClockTitle() {
-    switch (this.selectedView) {
-      case 'analog':
-        return 'Analog Clock';
-      case 'digital':
-        return 'Digital Clock';
-      case 'meter':
-        return 'Meter Clock';
-        case 'word':
-          return 'Word Clock';
-        case 'progress':
-          return 'Progress Clock';
-        case 'binary':
-          return 'Binary Clock';
-        case 'color-circle':
-            return 'Color Circle Clock';
-        case 'spiral':
-          return 'Spiral Clock';
-        case 'spiral-load':
-          return 'Spiral Load Clock';
-        case 'roman':
-          return 'Roman Clock';
-      default:
-        return '';
-    }
+  logout() {
+    window.location.href = '/login';
   }
 }
