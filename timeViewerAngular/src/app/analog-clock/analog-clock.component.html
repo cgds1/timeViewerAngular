@@ -24,13 +24,13 @@
 
   <!-- Sliders para ajustar la hora manualmente -->
   <div class="time-adjustment">
-    <label>Hour:
+    <label>Horas:
       <input type="range" min="0" max="23" [(ngModel)]="userHour" (input)="onTimeChange()" />
     </label>
-    <label>Minute:
+    <label>Minutos:
       <input type="range" min="0" max="59" [(ngModel)]="userMinute" (input)="onTimeChange()" />
     </label>
-    <label>Second:
+    <label>Segundos:
       <input type="range" min="0" max="59" [(ngModel)]="userSecond" (input)="onTimeChange()" />
     </label>
   </div>

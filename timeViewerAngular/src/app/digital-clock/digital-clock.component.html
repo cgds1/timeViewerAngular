@@ -4,13 +4,13 @@
 </div>
 
 <div class="time-adjustment">
-  <label>Hour:
+  <label>Horas:
     <input type="number" min="1" max="12" [(ngModel)]="userHour" (input)="onTimeChange()" />
   </label>
-  <label>Minute:
+  <label>Minutos:
     <input type="number" min="0" max="59" [(ngModel)]="userMinute" (input)="onTimeChange()" />
   </label>
-  <label>Second:
+  <label>Segundos:
     <input type="number" min="0" max="59" [(ngModel)]="userSecond" (input)="onTimeChange()" />
   </label>
   <label>AM/PM:

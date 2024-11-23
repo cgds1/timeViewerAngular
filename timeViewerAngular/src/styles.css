@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 body {
-  background: linear-gradient(to bottom, #4facfe, #00f2fe); 
-  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #8e44ad, #3498db); 
+  font-family: 'Poppins', sans-serif; 
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -10,9 +12,9 @@ body {
 }
 
 .auth-container {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   max-width: 400px;
   width: 100%;
   padding: 2rem;
